@@ -1,0 +1,152 @@
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from time import sleep
+
+
+chrome_options = Options()
+chrome_options.add_experimental_option("detach", True)
+
+navegador = webdriver.Chrome(options=chrome_options)
+navegador.get(url='https://www.amordoce.com/high-school-life')
+
+# Primeira conta
+email_1 = "email@hotmail.com"
+senha_1 = "senha"
+
+# Preenche email e senha
+campo_email = navegador.find_element(By.NAME, 'email')
+campo_email.send_keys(email_1)
+
+while True:
+    campo_senha = navegador.find_element(By.NAME, 'password')
+    if campo_senha.is_enabled() and campo_senha.is_displayed():
+        campo_senha.click()
+        break
+
+campo_senha.send_keys(senha_1)
+
+botao_entrar = navegador.find_element(By.CLASS_NAME, 'submit-btn')
+botao_entrar.click()
+
+wait = WebDriverWait(navegador, 10)
+botao_logout = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'disconnect')))
+# Clica no botão de logout
+botao_logout.click()
+
+
+
+# Aguarda a página de login carregar
+campo_email = WebDriverWait(navegador, 10).until(EC.visibility_of_element_located((By.NAME, 'email')))
+
+# Segunda conta
+email_2 = "email2@hotmail.com"
+senha_2 = "senha2"
+
+# Preenche email e senha
+campo_email.send_keys(email_2)
+while True:
+    campo_senha = navegador.find_element(By.NAME, 'password')
+    if campo_senha.is_enabled() and campo_senha.is_displayed():
+        campo_senha.click()
+        break
+sleep(5)
+campo_senha.send_keys(senha_2)
+botao_entrar = navegador.find_element(By.CLASS_NAME, 'submit-btn')
+botao_entrar.click()
+
+wait = WebDriverWait(navegador, 10)
+botao_logout = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'disconnect')))
+
+# Clica no botão de logout
+botao_logout.click()
+
+campo_email = WebDriverWait(navegador, 10).until(EC.visibility_of_element_located((By.NAME, 'email')))
+sleep(5)
+# Terceira conta
+email_3 = "email3.com"
+senha_3 = "senha3"
+
+# Preenche email e senha
+campo_email.send_keys(email_3)
+while True:
+    campo_senha = navegador.find_element(By.NAME, 'password')
+    if campo_senha.is_enabled() and campo_senha.is_displayed():
+        campo_senha.click()
+        break
+campo_senha.send_keys(senha_3)
+
+botao_entrar = navegador.find_element(By.CLASS_NAME, 'submit-btn')
+botao_entrar.click()
+
+wait = WebDriverWait(navegador, 10)
+botao_logout = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'disconnect')))
+botao_logout.click()
+campo_email = WebDriverWait(navegador, 10).until(EC.visibility_of_element_located((By.NAME, 'email')))
+sleep(5)
+
+# Quarta conta
+email_4 = "email4@hotmail.com"
+senha_4 = "senha4"
+
+# Preenche email e senha
+campo_email.send_keys(email_4)
+while True:
+    campo_senha = navegador.find_element(By.NAME, 'password')
+    if campo_senha.is_enabled() and campo_senha.is_displayed():
+        campo_senha.click()
+        break
+campo_senha.send_keys(senha_4)
+
+botao_entrar = navegador.find_element(By.CLASS_NAME, 'submit-btn')
+botao_entrar.click()
+
+wait = WebDriverWait(navegador, 10)
+botao_logout = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'disconnect')))
+botao_logout.click()
+campo_email = WebDriverWait(navegador, 10).until(EC.visibility_of_element_located((By.NAME, 'email')))
+sleep(5)
+
+# Quinta conta
+email_5 = "email5@hotmail.com"
+senha_5 = "senha5"
+
+# Preenche email e senha
+campo_email.send_keys(email_5)
+while True:
+    campo_senha = navegador.find_element(By.NAME, 'password')
+    if campo_senha.is_enabled() and campo_senha.is_displayed():
+        campo_senha.click()
+        break
+campo_senha.send_keys(senha_5)
+
+botao_entrar = navegador.find_element(By.CLASS_NAME, 'submit-btn')
+botao_entrar.click()
+
+wait = WebDriverWait(navegador, 10)
+botao_logout = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'disconnect')))
+botao_logout.click()
+campo_email = WebDriverWait(navegador, 10).until(EC.visibility_of_element_located((By.NAME, 'email')))
+sleep(5)
+
+# Sexta conta
+email_6 = "email6@hotmail.com"
+senha_6 = "senha6"
+
+# Preenche email e senha
+campo_email.send_keys(email_6)
+while True:
+    campo_senha = navegador.find_element(By.NAME, 'password')
+    if campo_senha.is_enabled() and campo_senha.is_displayed():
+        campo_senha.click()
+        break
+campo_senha.send_keys(senha_6)
+
+botao_entrar = navegador.find_element(By.CLASS_NAME, 'submit-btn')
+botao_entrar.click()
+
+wait = WebDriverWait(navegador, 10)
+botao_logout = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'disconnect')))
+botao_logout.click()
